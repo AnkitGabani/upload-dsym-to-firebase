@@ -1,0 +1,25 @@
+-->. https://stackoverflow.com/questions/48296774/firebase-crashlytics-upload-missing-dsyms-to-see-crashes-from-1-versions-ios
+-->> upload dsym to firebase
+
+
+Only and simple way to upload DSYMS files to Firebase Crashlytics. (April - 2021)
+
+Download appDsyms archive from App Store
+
+1.1 Login: https://appstoreconnect.apple.com
+
+1.2 Go to: MyApps -> Choose your app -> Test Flight -> Select app version that is in the App Store -> Build Metadata -> Includes Symbols (right side) -> Press: Download dSYM.
+
+Open terminal, drag and drop 3 files on terminal on this order:
+
+2.1 drag an drop: "upload-symbols" which can be found in /project/Pods/FirebaseCrashlytics/upload-symbols
+
+2.2 write " -gsp "
+
+2.3 drag an drop: "GoogleService-Info.plist" which can be found in /project/GoogleService-Info.plist
+
+2.4 write " -p ios "
+
+2.5 drag an drop: "appDsyms" folder (or zip file, both works) which usually is in Download folder /Users/username/Downloads/appDsyms
+
+2.6 Press Enter
